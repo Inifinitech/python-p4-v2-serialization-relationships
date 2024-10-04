@@ -15,6 +15,7 @@ with app.app_context():
     Zookeeper.query.delete()
     Enclosure.query.delete()
 
+    # adding data to zookeepers table
     zookeepers = []
     for n in range(25):
         zk = Zookeeper(name=fake.name(), birthday=fake.date_between(
@@ -23,6 +24,7 @@ with app.app_context():
 
     db.session.add_all(zookeepers)
 
+    # adding data to enclosures table
     enclosures = []
     environments = ['Desert', 'Pond', 'Ocean',
                     'Field', 'Trees', 'Cave', 'Cage']
@@ -34,6 +36,7 @@ with app.app_context():
 
     db.session.add_all(enclosures)
 
+    # adding data to animals table
     animals = []
     species = ['Lion', 'Tiger', 'Bear', 'Hippo', 'Rhino', 'Elephant', 'Ostrich',
                'Snake', 'Monkey']
